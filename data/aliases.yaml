@@ -15,6 +15,24 @@ ingredients:
   cacl2 2h2o: calcium chloride
   calcium chloride dihydrate: calcium chloride
   macroalgae: seaweed
+  bull-kelp: seaweed
+  agar agar: agar
+  agar–agar: agar
+  carrageenan kappa: kappa carrageenan
+  κ-carrageenan: kappa carrageenan
+  carrageenan iota: iota carrageenan
+  iota carrageenan-based: iota carrageenan
+  glycerin / glycerol: glycerol
+  vegetable glycerin: glycerol
+  vegetable glycerin / glycerol: glycerol
+  vegetal glycerin: glycerol
+  gelatine: gelatin
+  gelatine powder: gelatin
+  carboxy metyl cellulose: carboxymethyl cellulose
+  sodium carboxymethyl cellulose: carboxymethyl cellulose
+  cellulose nanowhiskers: cellulose nanocrystals
+  cornstarch: corn starch
+  beeswax pellets (food grade): beeswax
 
 properties:
   elongation at break (%): elongation at break
@@ -39,6 +57,37 @@ units:
   μm: µm
   g/cm³: g/cm3
   kg/m³: kg/m3
+  # amounts
+  gram: g
+  grams: g
+  gram (g): g
+  milligram (mg): mg
+  kilogram (kg): kg
+  ml: mL
+  milliliter: mL
+  milliliters: mL
+  milliliter (ml): mL
+  litre: L
+  liter (l): L
+  tablespoon: tbsp
+  teaspoon: tsp
+  drops (pipette): drops
+  # concentrations
+  wt%: "% w/w"
+  wt %: "% w/w"
+  w %: "% w/w"
+  "%wt": "% w/w"
+  "%w/w": "% w/w"
+  w/w%: "% w/w"
+  "% wt/wt": "% w/w"
+  "%w/v": "% w/v"
+  w/v%: "% w/v"
+  w/v: "% w/v"
+  "% wt/vol": "% w/v"
+  "%v/v": "% v/v"
+  v/v%: "% v/v"
+  v/v: "% v/v"
+  "%, v/v": "% v/v"
 
 # Units that are always the same for a property, used when the source left the unit blank.
 default_units:
