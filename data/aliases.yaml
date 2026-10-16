@@ -1,0 +1,48 @@
+# Name and unit fixes applied by build_db.py.
+# Names are lowercased first, so write the left-hand side in lowercase.
+# Add a line whenever you find a new spelling; then rerun build_db.py.
+
+ingredients:
+  sodium alginate: alginate
+  soduim alginate bp: alginate
+  calcium alginate: alginate
+  glycerin: glycerol
+  glycerine: glycerol
+  distilled water: water
+  deionized water: water
+  deionised water: water
+  cacl2: calcium chloride
+  cacl2 2h2o: calcium chloride
+  calcium chloride dihydrate: calcium chloride
+  macroalgae: seaweed
+
+properties:
+  elongation at break (%): elongation at break
+  young's modulus: youngs modulus
+  total soluble matter (%): water solubility
+  total soluble matter: water solubility
+  water vapour permeabilty coefficient: water vapour permeability
+  light transmittence values t280: uv transmittance 280 nm
+  light transmittance values t280: uv transmittance 280 nm
+  light transmittance 280 nm: uv transmittance 280 nm
+  swelling ration: swelling ratio
+
+# Spelling variants of units (matched case-insensitively).
+units:
+  mpa: MPa
+  gpa: GPa
+  kpa: kPa
+  degree: deg
+  degrees: deg
+  "°": deg
+  um: µm
+  μm: µm
+  g/cm³: g/cm3
+  kg/m³: kg/m3
+
+# Units that are always the same for a property, used when the source left the unit blank.
+default_units:
+  elongation at break: "%"
+  swelling ratio: "%"
+  water solubility: "%"
+  antioxidant activity dpph: "%"

@@ -1,0 +1,52 @@
+recipe_id,name,source
+surya2022-SF0,seaweed + glycerol,10.3390/polym14194147
+surya2022-SF1,seaweed + glycerol + 1% kenaf cellulose fibre,10.3390/polym14194147
+surya2022-SF2,seaweed + glycerol + 2% kenaf cellulose fibre,10.3390/polym14194147
+surya2022-SF3,seaweed + glycerol + 3% kenaf cellulose fibre,10.3390/polym14194147
+surya2022-SF4,seaweed + glycerol + 4% kenaf cellulose fibre,10.3390/polym14194147
+surya2022-SF5,seaweed + glycerol + 5% kenaf cellulose fibre,10.3390/polym14194147
+surya2022-SF0-S,"seaweed + glycerol, silane-treated",10.3390/polym14194147
+surya2022-SF1-S,"seaweed + glycerol + 1% kenaf cellulose fibre, silane-treated",10.3390/polym14194147
+surya2022-SF2-S,"seaweed + glycerol + 2% kenaf cellulose fibre, silane-treated",10.3390/polym14194147
+surya2022-SF3-S,"seaweed + glycerol + 3% kenaf cellulose fibre, silane-treated",10.3390/polym14194147
+surya2022-SF4-S,"seaweed + glycerol + 4% kenaf cellulose fibre, silane-treated",10.3390/polym14194147
+surya2022-SF5-S,"seaweed + glycerol + 5% kenaf cellulose fibre, silane-treated",10.3390/polym14194147
+garcia-PVA-G0,"alginate + PVA, 0% glycerol",10.1039/d5ma01298h
+garcia-PVA-G5,"alginate + PVA, 5% glycerol",10.1039/d5ma01298h
+garcia-PVA-G7.5,"alginate + PVA, 7.5% glycerol",10.1039/d5ma01298h
+garcia-PVA-G10,"alginate + PVA, 10% glycerol",10.1039/d5ma01298h
+garcia-PVA-G15,"alginate + PVA, 15% glycerol",10.1039/d5ma01298h
+garcia-PVA-G20,"alginate + PVA, 20% glycerol",10.1039/d5ma01298h
+garcia-SA-G0,"alginate, 0% glycerol",10.1039/d5ma01298h
+garcia-SA-G5,"alginate, 5% glycerol",10.1039/d5ma01298h
+garcia-SA-G10,"alginate, 10% glycerol",10.1039/d5ma01298h
+garcia-SA-G15,"alginate, 15% glycerol",10.1039/d5ma01298h
+garcia-SA-G20,"alginate, 20% glycerol",10.1039/d5ma01298h
+garcia-A,"film A: alginate + PVA + zein, beeswax top side",10.1039/d5ma01298h
+garcia-B,"film B: alginate + PVA, beeswax top side",10.1039/d5ma01298h
+garcia-C,"film C: alginate + zein, beeswax top side",10.1039/d5ma01298h
+garcia-COAT0,"alginate + PVA + zein, 0 beeswax coats",10.1039/d5ma01298h
+garcia-COAT1,"alginate + PVA + zein, 1 beeswax coat",10.1039/d5ma01298h
+garcia-COAT2,"alginate + PVA + zein, 2 beeswax coats",10.1039/d5ma01298h
+garcia-COAT3,"alginate + PVA + zein, 3 beeswax coats",10.1039/d5ma01298h
+abdollahi2013-CN0,alginate + glycerol,10.1016/j.ijbiomac.2012.12.016
+abdollahi2013-CN1,alginate + glycerol + 1% cellulose nanocrystals,10.1016/j.ijbiomac.2012.12.016
+abdollahi2013-CN3,alginate + glycerol + 3% cellulose nanocrystals,10.1016/j.ijbiomac.2012.12.016
+abdollahi2013-CN5,alginate + glycerol + 5% cellulose nanocrystals,10.1016/j.ijbiomac.2012.12.016
+abdollahi2013-CN10,alginate + glycerol + 10% cellulose nanocrystals,10.1016/j.ijbiomac.2012.12.016
+liling2016-ION-control,"alginate + glycerol, not crosslinked (ion series control)",10.1016/j.carbpol.2015.09.034
+liling2016-ION-Ca,"alginate + glycerol, calcium chloride 2% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-ION-Zn,"alginate + glycerol, zinc chloride 2% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-ION-Mn,"alginate + glycerol, manganese chloride 2% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-ION-Al,"alginate + glycerol, aluminium chloride 2% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-CONC-0,"alginate + glycerol, not crosslinked (concentration series control)",10.1016/j.carbpol.2015.09.034
+liling2016-CONC-1,"alginate + glycerol, calcium chloride 1% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-CONC-2,"alginate + glycerol, calcium chloride 2% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-CONC-3,"alginate + glycerol, calcium chloride 3% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-CONC-4,"alginate + glycerol, calcium chloride 4% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-CONC-5,"alginate + glycerol, calcium chloride 5% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-TIME-0,"alginate + glycerol, not crosslinked (time series control)",10.1016/j.carbpol.2015.09.034
+liling2016-TIME-1,"alginate + glycerol, calcium chloride 2% for 1 min",10.1016/j.carbpol.2015.09.034
+liling2016-TIME-2,"alginate + glycerol, calcium chloride 2% for 2 min",10.1016/j.carbpol.2015.09.034
+liling2016-TIME-4,"alginate + glycerol, calcium chloride 2% for 4 min",10.1016/j.carbpol.2015.09.034
+liling2016-TIME-6,"alginate + glycerol, calcium chloride 2% for 6 min",10.1016/j.carbpol.2015.09.034

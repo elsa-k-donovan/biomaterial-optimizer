@@ -1,0 +1,247 @@
+recipe_id,property,value,sd,unit,reported
+surya2022-SF0,water contact angle,39.94,0.26,deg,39.94 ± 0.26
+surya2022-SF0,water solubility,86.1,,%,86.1
+surya2022-SF0,moisture absorption capacity,198.8,,%,198.8
+surya2022-SF0,water vapour permeability,0.000462,,g mm/m2 d kPa,0.000462
+surya2022-SF0,soil weight loss day 7,44.9,,%,44.9
+surya2022-SF0,soil weight loss day 14,55,,%,55
+surya2022-SF0,soil weight loss day 21,65.3,,%,65.3
+surya2022-SF0,soil weight loss day 28,75.1,,%,75.1
+surya2022-SF1,water contact angle,41.35,0.5,deg,41.35 ± 0.5
+surya2022-SF1,water solubility,82.3,,%,82.3
+surya2022-SF1,moisture absorption capacity,191.7,,%,191.7
+surya2022-SF1,water vapour permeability,0.000456,,g mm/m2 d kPa,0.000456
+surya2022-SF1,soil weight loss day 7,35.2,,%,35.2
+surya2022-SF1,soil weight loss day 14,45,,%,45
+surya2022-SF1,soil weight loss day 21,52.9,,%,52.9
+surya2022-SF1,soil weight loss day 28,59.9,,%,59.9
+surya2022-SF2,water contact angle,43.66,0.11,deg,43.66 ± 0.11
+surya2022-SF2,water solubility,79.5,,%,79.5
+surya2022-SF2,moisture absorption capacity,186.1,,%,186.1
+surya2022-SF2,water vapour permeability,0.000457,,g mm/m2 d kPa,0.000457
+surya2022-SF2,soil weight loss day 7,29.6,,%,29.6
+surya2022-SF2,soil weight loss day 14,37.7,,%,37.7
+surya2022-SF2,soil weight loss day 21,46.7,,%,46.7
+surya2022-SF2,soil weight loss day 28,54.6,,%,54.6
+surya2022-SF3,water contact angle,45.26,0.94,deg,45.26 ± 0.94
+surya2022-SF3,water solubility,75.3,,%,75.3
+surya2022-SF3,moisture absorption capacity,181.4,,%,181.4
+surya2022-SF3,water vapour permeability,0.000449,,g mm/m2 d kPa,0.000449
+surya2022-SF3,soil weight loss day 7,24.5,,%,24.5
+surya2022-SF3,soil weight loss day 14,33.3,,%,33.3
+surya2022-SF3,soil weight loss day 21,41.4,,%,41.4
+surya2022-SF3,soil weight loss day 28,50,,%,50
+surya2022-SF4,water contact angle,47.93,0.28,deg,47.93 ± 0.28
+surya2022-SF4,water solubility,72.5,,%,72.5
+surya2022-SF4,moisture absorption capacity,175.1,,%,175.1
+surya2022-SF4,water vapour permeability,0.000444,,g mm/m2 d kPa,0.000444
+surya2022-SF4,soil weight loss day 7,19.5,,%,19.5
+surya2022-SF4,soil weight loss day 14,28,,%,28
+surya2022-SF4,soil weight loss day 21,34.4,,%,34.4
+surya2022-SF4,soil weight loss day 28,45.4,,%,45.4
+surya2022-SF5,water contact angle,46.33,0.41,deg,46.33 ± 0.41
+surya2022-SF5,water solubility,72.9,,%,72.9
+surya2022-SF5,moisture absorption capacity,175.7,,%,175.7
+surya2022-SF5,water vapour permeability,0.000445,,g mm/m2 d kPa,0.000445
+surya2022-SF5,soil weight loss day 7,19.6,,%,19.6
+surya2022-SF5,soil weight loss day 14,28,,%,28
+surya2022-SF5,soil weight loss day 21,34.2,,%,34.2
+surya2022-SF5,soil weight loss day 28,45,,%,45
+surya2022-SF0-S,water contact angle,107.27,0.29,deg,107.27 ± 0.29
+surya2022-SF0-S,water solubility,48.5,,%,48.5
+surya2022-SF0-S,moisture absorption capacity,89.3,,%,89.3
+surya2022-SF0-S,water vapour permeability,9.2e-05,,g mm/m2 d kPa,9.2e-05
+surya2022-SF0-S,soil weight loss day 7,31.3,,%,31.3
+surya2022-SF0-S,soil weight loss day 14,38.4,,%,38.4
+surya2022-SF0-S,soil weight loss day 21,45.2,,%,45.2
+surya2022-SF0-S,soil weight loss day 28,52.6,,%,52.6
+surya2022-SF1-S,water contact angle,109.07,0.27,deg,109.07 ± 0.27
+surya2022-SF1-S,water solubility,45.7,,%,45.7
+surya2022-SF1-S,moisture absorption capacity,84.9,,%,84.9
+surya2022-SF1-S,water vapour permeability,8.9e-05,,g mm/m2 d kPa,8.9e-05
+surya2022-SF1-S,soil weight loss day 7,24.5,,%,24.5
+surya2022-SF1-S,soil weight loss day 14,31.4,,%,31.4
+surya2022-SF1-S,soil weight loss day 21,37.2,,%,37.2
+surya2022-SF1-S,soil weight loss day 28,41.7,,%,41.7
+surya2022-SF2-S,water contact angle,111.37,0.47,deg,111.37 ± 0.47
+surya2022-SF2-S,water solubility,42.8,,%,42.8
+surya2022-SF2-S,moisture absorption capacity,78.9,,%,78.9
+surya2022-SF2-S,water vapour permeability,8.6e-05,,g mm/m2 d kPa,8.6e-05
+surya2022-SF2-S,soil weight loss day 7,20.7,,%,20.7
+surya2022-SF2-S,soil weight loss day 14,26.6,,%,26.6
+surya2022-SF2-S,soil weight loss day 21,32.6,,%,32.6
+surya2022-SF2-S,soil weight loss day 28,38.5,,%,38.5
+surya2022-SF3-S,water contact angle,115.82,0.6,deg,115.82 ± 0.6
+surya2022-SF3-S,water solubility,38.5,,%,38.5
+surya2022-SF3-S,moisture absorption capacity,73.4,,%,73.4
+surya2022-SF3-S,water vapour permeability,8.1e-05,,g mm/m2 d kPa,8.1e-05
+surya2022-SF3-S,soil weight loss day 7,16.7,,%,16.7
+surya2022-SF3-S,soil weight loss day 14,23.2,,%,23.2
+surya2022-SF3-S,soil weight loss day 21,29.4,,%,29.4
+surya2022-SF3-S,soil weight loss day 28,34.5,,%,34.5
+surya2022-SF4-S,water contact angle,117.73,0.91,deg,117.73 ± 0.91
+surya2022-SF4-S,water solubility,35.2,,%,35.2
+surya2022-SF4-S,moisture absorption capacity,67.5,,%,67.5
+surya2022-SF4-S,water vapour permeability,7.5e-05,,g mm/m2 d kPa,7.5e-05
+surya2022-SF4-S,soil weight loss day 7,13.8,,%,13.8
+surya2022-SF4-S,soil weight loss day 14,19.4,,%,19.4
+surya2022-SF4-S,soil weight loss day 21,24.3,,%,24.3
+surya2022-SF4-S,soil weight loss day 28,31.2,,%,31.2
+surya2022-SF5-S,water contact angle,116.07,0.33,deg,116.07 ± 0.33
+surya2022-SF5-S,water solubility,35.2,,%,35.2
+surya2022-SF5-S,moisture absorption capacity,67.6,,%,67.6
+surya2022-SF5-S,water vapour permeability,8.1e-05,,g mm/m2 d kPa,8.1e-05
+surya2022-SF5-S,soil weight loss day 7,14.2,,%,14.2
+surya2022-SF5-S,soil weight loss day 14,19.4,,%,19.4
+surya2022-SF5-S,soil weight loss day 21,24.9,,%,24.9
+surya2022-SF5-S,soil weight loss day 28,31.4,,%,31.4
+garcia-PVA-G0,tensile strength,8.8,,MPa,8.8
+garcia-PVA-G0,elongation at break,2,,%,2
+garcia-PVA-G5,tensile strength,10.5,,MPa,10.5
+garcia-PVA-G5,elongation at break,3.6,,%,3.6
+garcia-PVA-G7.5,tensile strength,12.1,,MPa,12.1
+garcia-PVA-G7.5,elongation at break,4.9,,%,4.9
+garcia-PVA-G10,tensile strength,7.6,,MPa,7.6
+garcia-PVA-G10,elongation at break,6.4,,%,6.4
+garcia-PVA-G15,tensile strength,1.45,,MPa,1.45
+garcia-PVA-G15,elongation at break,12.7,,%,12.7
+garcia-PVA-G20,tensile strength,1.1,,MPa,1.1
+garcia-PVA-G20,elongation at break,15.2,,%,15.2
+garcia-SA-G0,tensile strength,13.3,,MPa,13.3
+garcia-SA-G0,elongation at break,3.5,,%,3.5
+garcia-SA-G5,tensile strength,12.95,,MPa,12.95
+garcia-SA-G5,elongation at break,4,,%,4
+garcia-SA-G10,tensile strength,11.2,,MPa,11.2
+garcia-SA-G10,elongation at break,4.9,,%,4.9
+garcia-SA-G15,tensile strength,8.85,,MPa,8.85
+garcia-SA-G15,elongation at break,6.3,,%,6.3
+garcia-SA-G20,tensile strength,4.5,,MPa,4.5
+garcia-SA-G20,elongation at break,14,,%,14
+garcia-A,tensile strength,7.4,,MPa,7.4
+garcia-A,elongation at break,4.3,,%,4.3
+garcia-A,uv transmittance 280 nm,,,%,<0.1
+garcia-A,water contact angle,108,,deg,108
+garcia-A,water contact angle (uncoated back side),80,,deg,80
+garcia-B,tensile strength,4.6,,MPa,4.6
+garcia-B,elongation at break,5.3,,%,5.3
+garcia-B,uv transmittance 280 nm,,,%,<0.1
+garcia-B,water contact angle,110.5,,deg,110.5
+garcia-B,water contact angle (uncoated back side),79,,deg,79
+garcia-C,tensile strength,8.3,,MPa,8.3
+garcia-C,elongation at break,7.6,,%,7.6
+garcia-C,uv transmittance 280 nm,,,%,<0.1
+garcia-C,water contact angle,108,,deg,108
+garcia-C,water contact angle (uncoated back side),81,,deg,81
+garcia-COAT0,water contact angle,74.03,5,deg,74.03 ± 5
+garcia-COAT1,water contact angle,99.2,2,deg,99.2 ± 2
+garcia-COAT2,water contact angle,102.15,9,deg,102.15 ± 9
+garcia-COAT3,water contact angle,116.54,10,deg,116.54 ± 10
+abdollahi2013-CN0,water solubility,99.55,0.24,%,99.55 ± 0.24
+abdollahi2013-CN0,water vapour permeability,1.99e-10,1.9e-11,g/(m s Pa),1.99e-10 ± 1.9e-11
+abdollahi2013-CN0,water contact angle,40.7,2.4,deg,40.7 ± 2.4
+abdollahi2013-CN0,moisture content,4.69,0.24,%,4.69 ± 0.24
+abdollahi2013-CN0,tensile strength,18.03,,MPa,18.03
+abdollahi2013-CN0,elongation at break,11.53,,%,11.53
+abdollahi2013-CN0,youngs modulus,157.27,44,MPa,157.27 ± 44
+abdollahi2013-CN1,water solubility,95,2,%,95 ± 2
+abdollahi2013-CN1,water vapour permeability,1.8e-10,6e-12,g/(m s Pa),1.8e-10 ± 6e-12
+abdollahi2013-CN1,water contact angle,70.1,6.2,deg,70.1 ± 6.2
+abdollahi2013-CN1,moisture content,4.7,0.11,%,4.7 ± 0.11
+abdollahi2013-CN1,tensile strength,19.4,,MPa,19.4
+abdollahi2013-CN1,elongation at break,9.1,,%,9.1
+abdollahi2013-CN1,youngs modulus,209,51,MPa,209 ± 51
+abdollahi2013-CN3,water solubility,91.5,2,%,91.5 ± 2
+abdollahi2013-CN3,water vapour permeability,1.66e-10,1.1e-11,g/(m s Pa),1.66e-10 ± 1.1e-11
+abdollahi2013-CN3,water contact angle,73.1,2.2,deg,73.1 ± 2.2
+abdollahi2013-CN3,moisture content,3.08,0.35,%,3.08 ± 0.35
+abdollahi2013-CN3,tensile strength,20.2,,MPa,20.2
+abdollahi2013-CN3,elongation at break,8.5,,%,8.5
+abdollahi2013-CN3,youngs modulus,259,61,MPa,259 ± 61
+abdollahi2013-CN5,water solubility,77.4,0.8,%,77.4 ± 0.8
+abdollahi2013-CN5,water vapour permeability,1.64e-10,8e-12,g/(m s Pa),1.64e-10 ± 8e-12
+abdollahi2013-CN5,water contact angle,66.6,4.7,deg,66.6 ± 4.7
+abdollahi2013-CN5,moisture content,3.41,0.16,%,3.41 ± 0.16
+abdollahi2013-CN5,tensile strength,22.4,,MPa,22.4
+abdollahi2013-CN5,elongation at break,8.25,,%,8.25
+abdollahi2013-CN5,youngs modulus,298,42,MPa,298 ± 42
+abdollahi2013-CN10,water solubility,58.97,3.21,%,58.97 ± 3.21
+abdollahi2013-CN10,water vapour permeability,1.63e-10,7e-12,g/(m s Pa),1.63e-10 ± 7e-12
+abdollahi2013-CN10,water contact angle,80.8,7.28,deg,80.8 ± 7.28
+abdollahi2013-CN10,moisture content,3.25,0.36,%,3.25 ± 0.36
+abdollahi2013-CN10,tensile strength,18.4,,MPa,18.4
+abdollahi2013-CN10,elongation at break,9.8,,%,9.8
+abdollahi2013-CN10,youngs modulus,211,36,MPa,211 ± 36
+liling2016-ION-control,thickness,0.0134,0.0006,mm,0.0134 ± 0.0006
+liling2016-ION-control,water vapour permeability,4.583e-11,5.83e-12,g/(m s Pa),4.583e-11 ± 5.83e-12
+liling2016-ION-control,light transmittance at 450 nm,84.05,0.4,%,84.05 ± 0.4
+liling2016-ION-control,tensile strength,40.209,5,MPa,40.209 ± 5
+liling2016-ION-control,elongation at break,2.9,0.6,%,2.9 ± 0.6
+liling2016-ION-Ca,thickness,0.0126,0.0004,mm,0.0126 ± 0.0004
+liling2016-ION-Ca,water vapour permeability,4.172e-11,1.2e-12,g/(m s Pa),4.172e-11 ± 1.2e-12
+liling2016-ION-Ca,light transmittance at 450 nm,86.88,0.67,%,86.88 ± 0.67
+liling2016-ION-Ca,tensile strength,134.58,10,MPa,134.58 ± 10
+liling2016-ION-Ca,elongation at break,4.22,0.18,%,4.22 ± 0.18
+liling2016-ION-Zn,thickness,0.0119,0.0003,mm,0.0119 ± 0.0003
+liling2016-ION-Zn,water vapour permeability,4.168e-11,1.29e-12,g/(m s Pa),4.168e-11 ± 1.29e-12
+liling2016-ION-Zn,light transmittance at 450 nm,84.86,0.42,%,84.86 ± 0.42
+liling2016-ION-Zn,tensile strength,99.5,8.5,MPa,99.5 ± 8.5
+liling2016-ION-Zn,elongation at break,2.11,0.17,%,2.11 ± 0.17
+liling2016-ION-Mn,thickness,0.0077,0.0003,mm,0.0077 ± 0.0003
+liling2016-ION-Mn,water vapour permeability,3.031e-11,6.4e-13,g/(m s Pa),3.031e-11 ± 6.4e-13
+liling2016-ION-Mn,light transmittance at 450 nm,84.02,1.28,%,84.02 ± 1.28
+liling2016-ION-Mn,tensile strength,95.6,13,MPa,95.6 ± 13
+liling2016-ION-Mn,elongation at break,1.96,0.55,%,1.96 ± 0.55
+liling2016-ION-Al,thickness,0.0116,0.0004,mm,0.0116 ± 0.0004
+liling2016-ION-Al,water vapour permeability,4.278e-11,4e-13,g/(m s Pa),4.278e-11 ± 4e-13
+liling2016-ION-Al,light transmittance at 450 nm,81.83,1.52,%,81.83 ± 1.52
+liling2016-ION-Al,tensile strength,79.8,8,MPa,79.8 ± 8
+liling2016-ION-Al,elongation at break,1.63,0.26,%,1.63 ± 0.26
+liling2016-CONC-0,tensile strength,39.6,,MPa,39.6
+liling2016-CONC-0,elongation at break,3.65,,%,3.65
+liling2016-CONC-1,thickness,0.0141,0.0004,mm,0.0141 ± 0.0004
+liling2016-CONC-1,water vapour permeability,4.107e-11,1.77e-12,g/(m s Pa),4.107e-11 ± 1.77e-12
+liling2016-CONC-1,light transmittance at 450 nm,88.71,0.81,%,88.71 ± 0.81
+liling2016-CONC-1,tensile strength,126.9,,MPa,126.9
+liling2016-CONC-1,elongation at break,4.92,,%,4.92
+liling2016-CONC-2,thickness,0.0123,0.0003,mm,0.0123 ± 0.0003
+liling2016-CONC-2,water vapour permeability,3.631e-11,7.7e-13,g/(m s Pa),3.631e-11 ± 7.7e-13
+liling2016-CONC-2,light transmittance at 450 nm,88.04,0.62,%,88.04 ± 0.62
+liling2016-CONC-2,tensile strength,134,,MPa,134
+liling2016-CONC-2,elongation at break,5.55,,%,5.55
+liling2016-CONC-3,thickness,0.0119,0.0001,mm,0.0119 ± 0.0001
+liling2016-CONC-3,water vapour permeability,3.485e-11,4.5e-13,g/(m s Pa),3.485e-11 ± 4.5e-13
+liling2016-CONC-3,light transmittance at 450 nm,87.24,0.44,%,87.24 ± 0.44
+liling2016-CONC-3,tensile strength,129.6,,MPa,129.6
+liling2016-CONC-3,elongation at break,5.13,,%,5.13
+liling2016-CONC-4,thickness,0.0121,0.0002,mm,0.0121 ± 0.0002
+liling2016-CONC-4,water vapour permeability,3.69e-11,3.7e-13,g/(m s Pa),3.69e-11 ± 3.7e-13
+liling2016-CONC-4,light transmittance at 450 nm,86.98,0.36,%,86.98 ± 0.36
+liling2016-CONC-4,tensile strength,126.2,,MPa,126.2
+liling2016-CONC-4,elongation at break,5.23,,%,5.23
+liling2016-CONC-5,thickness,0.012,0.0004,mm,0.012 ± 0.0004
+liling2016-CONC-5,water vapour permeability,3.287e-11,2.51e-12,g/(m s Pa),3.287e-11 ± 2.51e-12
+liling2016-CONC-5,light transmittance at 450 nm,86.39,0.54,%,86.39 ± 0.54
+liling2016-CONC-5,tensile strength,123.9,,MPa,123.9
+liling2016-CONC-5,elongation at break,5.08,,%,5.08
+liling2016-TIME-0,tensile strength,40.9,,MPa,40.9
+liling2016-TIME-0,elongation at break,2.93,,%,2.93
+liling2016-TIME-1,thickness,0.0122,0.0004,mm,0.0122 ± 0.0004
+liling2016-TIME-1,water vapour permeability,3.509e-11,5.4e-13,g/(m s Pa),3.509e-11 ± 5.4e-13
+liling2016-TIME-1,light transmittance at 450 nm,87.33,0.04,%,87.33 ± 0.04
+liling2016-TIME-1,tensile strength,124.7,,MPa,124.7
+liling2016-TIME-1,elongation at break,4.68,,%,4.68
+liling2016-TIME-2,thickness,0.0129,0.0005,mm,0.0129 ± 0.0005
+liling2016-TIME-2,water vapour permeability,3.884e-11,5.8e-13,g/(m s Pa),3.884e-11 ± 5.8e-13
+liling2016-TIME-2,light transmittance at 450 nm,87.44,0.01,%,87.44 ± 0.01
+liling2016-TIME-2,tensile strength,126.3,,MPa,126.3
+liling2016-TIME-2,elongation at break,5.15,,%,5.15
+liling2016-TIME-4,thickness,0.0131,0.0004,mm,0.0131 ± 0.0004
+liling2016-TIME-4,water vapour permeability,3.916e-11,2.64e-12,g/(m s Pa),3.916e-11 ± 2.64e-12
+liling2016-TIME-4,light transmittance at 450 nm,87.55,0.43,%,87.55 ± 0.43
+liling2016-TIME-4,tensile strength,127.8,,MPa,127.8
+liling2016-TIME-4,elongation at break,4.28,,%,4.28
+liling2016-TIME-6,thickness,0.013,0.0001,mm,0.013 ± 0.0001
+liling2016-TIME-6,water vapour permeability,4.364e-11,2.33e-12,g/(m s Pa),4.364e-11 ± 2.33e-12
+liling2016-TIME-6,light transmittance at 450 nm,87.73,0.35,%,87.73 ± 0.35
+liling2016-TIME-6,tensile strength,130.8,,MPa,130.8
+liling2016-TIME-6,elongation at break,4.35,,%,4.35

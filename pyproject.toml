@@ -1,7 +1,7 @@
 [project]
 name = "biomaterial-optimizer"
 version = "0.1.0"
-description = "Add your description here"
+description = "Machine learning to find which ingredients and processing make seaweed biomaterials more water-resistant"
 readme = "README.md"
 authors = [
     { name = "Elsa K Donovan" }
@@ -11,14 +11,20 @@ dependencies = [
     "duckdb>=1.5.6",
     "httpx>=0.28.1",
     "pydantic>=2.14.1",
-    "pyright>=1.1.414",
-    "pytest>=9.1.1",
-    "ruff>=0.17.0",
+    "pyyaml>=6.0.3",
 ]
-
-[project.scripts]
-biomaterial-optimizer = "biomaterial_optimizer:main"
 
 [build-system]
 requires = ["uv_build>=0.13.0,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414",
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"

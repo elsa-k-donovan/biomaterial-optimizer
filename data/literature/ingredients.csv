@@ -1,0 +1,191 @@
+recipe_id,ingredient,amount,unit
+surya2022-SF0,seaweed,10,g
+surya2022-SF0,glycerol,5,g
+surya2022-SF0,water,500,ml
+surya2022-SF1,seaweed,10,g
+surya2022-SF1,glycerol,5,g
+surya2022-SF1,water,500,ml
+surya2022-SF1,kenaf cellulose nanofibre,0.1,g
+surya2022-SF2,seaweed,10,g
+surya2022-SF2,glycerol,5,g
+surya2022-SF2,water,500,ml
+surya2022-SF2,kenaf cellulose nanofibre,0.2,g
+surya2022-SF3,seaweed,10,g
+surya2022-SF3,glycerol,5,g
+surya2022-SF3,water,500,ml
+surya2022-SF3,kenaf cellulose nanofibre,0.3,g
+surya2022-SF4,seaweed,10,g
+surya2022-SF4,glycerol,5,g
+surya2022-SF4,water,500,ml
+surya2022-SF4,kenaf cellulose nanofibre,0.4,g
+surya2022-SF5,seaweed,10,g
+surya2022-SF5,glycerol,5,g
+surya2022-SF5,water,500,ml
+surya2022-SF5,kenaf cellulose nanofibre,0.5,g
+surya2022-SF0-S,seaweed,10,g
+surya2022-SF0-S,glycerol,5,g
+surya2022-SF0-S,water,500,ml
+surya2022-SF0-S,silane surface treatment,,
+surya2022-SF1-S,seaweed,10,g
+surya2022-SF1-S,glycerol,5,g
+surya2022-SF1-S,water,500,ml
+surya2022-SF1-S,kenaf cellulose nanofibre,0.1,g
+surya2022-SF1-S,silane surface treatment,,
+surya2022-SF2-S,seaweed,10,g
+surya2022-SF2-S,glycerol,5,g
+surya2022-SF2-S,water,500,ml
+surya2022-SF2-S,kenaf cellulose nanofibre,0.2,g
+surya2022-SF2-S,silane surface treatment,,
+surya2022-SF3-S,seaweed,10,g
+surya2022-SF3-S,glycerol,5,g
+surya2022-SF3-S,water,500,ml
+surya2022-SF3-S,kenaf cellulose nanofibre,0.3,g
+surya2022-SF3-S,silane surface treatment,,
+surya2022-SF4-S,seaweed,10,g
+surya2022-SF4-S,glycerol,5,g
+surya2022-SF4-S,water,500,ml
+surya2022-SF4-S,kenaf cellulose nanofibre,0.4,g
+surya2022-SF4-S,silane surface treatment,,
+surya2022-SF5-S,seaweed,10,g
+surya2022-SF5-S,glycerol,5,g
+surya2022-SF5-S,water,500,ml
+surya2022-SF5-S,kenaf cellulose nanofibre,0.5,g
+surya2022-SF5-S,silane surface treatment,,
+garcia-PVA-G0,sodium alginate,5,g
+garcia-PVA-G0,polyvinyl alcohol (recycled),2.5,g
+garcia-PVA-G5,sodium alginate,5,g
+garcia-PVA-G5,polyvinyl alcohol (recycled),2.5,g
+garcia-PVA-G5,glycerol,0.375,g
+garcia-PVA-G7.5,sodium alginate,5,g
+garcia-PVA-G7.5,polyvinyl alcohol (recycled),2.5,g
+garcia-PVA-G7.5,glycerol,0.5625,g
+garcia-PVA-G10,sodium alginate,5,g
+garcia-PVA-G10,polyvinyl alcohol (recycled),2.5,g
+garcia-PVA-G10,glycerol,0.75,g
+garcia-PVA-G15,sodium alginate,5,g
+garcia-PVA-G15,polyvinyl alcohol (recycled),2.5,g
+garcia-PVA-G15,glycerol,1.125,g
+garcia-PVA-G20,sodium alginate,5,g
+garcia-PVA-G20,polyvinyl alcohol (recycled),2.5,g
+garcia-PVA-G20,glycerol,1.5,g
+garcia-SA-G0,sodium alginate,5,g
+garcia-SA-G5,sodium alginate,5,g
+garcia-SA-G5,glycerol,0.25,g
+garcia-SA-G10,sodium alginate,5,g
+garcia-SA-G10,glycerol,0.5,g
+garcia-SA-G15,sodium alginate,5,g
+garcia-SA-G15,glycerol,0.75,g
+garcia-SA-G20,sodium alginate,5,g
+garcia-SA-G20,glycerol,1,g
+garcia-A,sodium alginate,5,g
+garcia-A,polyvinyl alcohol (recycled),2.5,g
+garcia-A,glycerol,0.5625,g
+garcia-A,zein,0.375,g
+garcia-A,beeswax coating,1,coats
+garcia-B,sodium alginate,5,g
+garcia-B,polyvinyl alcohol (recycled),2.5,g
+garcia-B,glycerol,0.5625,g
+garcia-B,beeswax coating,1,coats
+garcia-C,sodium alginate,5,g
+garcia-C,glycerol,0.375,g
+garcia-C,zein,0.25,g
+garcia-C,beeswax coating,1,coats
+garcia-COAT0,sodium alginate,5,g
+garcia-COAT0,polyvinyl alcohol (recycled),2.5,g
+garcia-COAT0,glycerol,0.5625,g
+garcia-COAT0,zein,0.375,g
+garcia-COAT1,sodium alginate,5,g
+garcia-COAT1,polyvinyl alcohol (recycled),2.5,g
+garcia-COAT1,glycerol,0.5625,g
+garcia-COAT1,zein,0.375,g
+garcia-COAT1,beeswax coating,1,coats
+garcia-COAT2,sodium alginate,5,g
+garcia-COAT2,polyvinyl alcohol (recycled),2.5,g
+garcia-COAT2,glycerol,0.5625,g
+garcia-COAT2,zein,0.375,g
+garcia-COAT2,beeswax coating,2,coats
+garcia-COAT3,sodium alginate,5,g
+garcia-COAT3,polyvinyl alcohol (recycled),2.5,g
+garcia-COAT3,glycerol,0.5625,g
+garcia-COAT3,zein,0.375,g
+garcia-COAT3,beeswax coating,3,coats
+abdollahi2013-CN0,sodium alginate,1,g
+abdollahi2013-CN0,glycerol,0.25,g
+abdollahi2013-CN0,water,100,ml
+abdollahi2013-CN1,sodium alginate,1,g
+abdollahi2013-CN1,glycerol,0.25,g
+abdollahi2013-CN1,water,100,ml
+abdollahi2013-CN1,cellulose nanocrystals,0.01,g
+abdollahi2013-CN3,sodium alginate,1,g
+abdollahi2013-CN3,glycerol,0.25,g
+abdollahi2013-CN3,water,100,ml
+abdollahi2013-CN3,cellulose nanocrystals,0.03,g
+abdollahi2013-CN5,sodium alginate,1,g
+abdollahi2013-CN5,glycerol,0.25,g
+abdollahi2013-CN5,water,100,ml
+abdollahi2013-CN5,cellulose nanocrystals,0.05,g
+abdollahi2013-CN10,sodium alginate,1,g
+abdollahi2013-CN10,glycerol,0.25,g
+abdollahi2013-CN10,water,100,ml
+abdollahi2013-CN10,cellulose nanocrystals,0.1,g
+liling2016-ION-control,sodium alginate,10,g
+liling2016-ION-control,glycerol,3,g
+liling2016-ION-control,water,987,g
+liling2016-ION-Ca,sodium alginate,10,g
+liling2016-ION-Ca,glycerol,3,g
+liling2016-ION-Ca,water,987,g
+liling2016-ION-Ca,calcium chloride bath,2,% w/v
+liling2016-ION-Zn,sodium alginate,10,g
+liling2016-ION-Zn,glycerol,3,g
+liling2016-ION-Zn,water,987,g
+liling2016-ION-Zn,zinc chloride bath,2,% w/v
+liling2016-ION-Mn,sodium alginate,10,g
+liling2016-ION-Mn,glycerol,3,g
+liling2016-ION-Mn,water,987,g
+liling2016-ION-Mn,manganese chloride bath,2,% w/v
+liling2016-ION-Al,sodium alginate,10,g
+liling2016-ION-Al,glycerol,3,g
+liling2016-ION-Al,water,987,g
+liling2016-ION-Al,aluminium chloride bath,2,% w/v
+liling2016-CONC-0,sodium alginate,10,g
+liling2016-CONC-0,glycerol,3,g
+liling2016-CONC-0,water,987,g
+liling2016-CONC-1,sodium alginate,10,g
+liling2016-CONC-1,glycerol,3,g
+liling2016-CONC-1,water,987,g
+liling2016-CONC-1,calcium chloride bath,1,% w/v
+liling2016-CONC-2,sodium alginate,10,g
+liling2016-CONC-2,glycerol,3,g
+liling2016-CONC-2,water,987,g
+liling2016-CONC-2,calcium chloride bath,2,% w/v
+liling2016-CONC-3,sodium alginate,10,g
+liling2016-CONC-3,glycerol,3,g
+liling2016-CONC-3,water,987,g
+liling2016-CONC-3,calcium chloride bath,3,% w/v
+liling2016-CONC-4,sodium alginate,10,g
+liling2016-CONC-4,glycerol,3,g
+liling2016-CONC-4,water,987,g
+liling2016-CONC-4,calcium chloride bath,4,% w/v
+liling2016-CONC-5,sodium alginate,10,g
+liling2016-CONC-5,glycerol,3,g
+liling2016-CONC-5,water,987,g
+liling2016-CONC-5,calcium chloride bath,5,% w/v
+liling2016-TIME-0,sodium alginate,10,g
+liling2016-TIME-0,glycerol,3,g
+liling2016-TIME-0,water,987,g
+liling2016-TIME-1,sodium alginate,10,g
+liling2016-TIME-1,glycerol,3,g
+liling2016-TIME-1,water,987,g
+liling2016-TIME-1,calcium chloride bath,2,% w/v
+liling2016-TIME-2,sodium alginate,10,g
+liling2016-TIME-2,glycerol,3,g
+liling2016-TIME-2,water,987,g
+liling2016-TIME-2,calcium chloride bath,2,% w/v
+liling2016-TIME-4,sodium alginate,10,g
+liling2016-TIME-4,glycerol,3,g
+liling2016-TIME-4,water,987,g
+liling2016-TIME-4,calcium chloride bath,2,% w/v
+liling2016-TIME-6,sodium alginate,10,g
+liling2016-TIME-6,glycerol,3,g
+liling2016-TIME-6,water,987,g
+liling2016-TIME-6,calcium chloride bath,2,% w/v

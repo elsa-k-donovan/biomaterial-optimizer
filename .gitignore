@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project data: downloaded or rebuilt locally, never committed
+data/raw/
+*.duckdb
+data/skipped.csv
+data/literature/*.pdf
+
+# macOS
+.DS_Store

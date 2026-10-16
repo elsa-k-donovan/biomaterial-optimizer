@@ -1,0 +1,119 @@
+# One entry per paper. `doi` must match the `source` column in recipes.csv.
+# Notes on how values were extracted live here, not in the data.
+
+surya2022:
+  doi: 10.3390/polym14194147
+  title: Hydrophobicity and Biodegradability of Silane-Treated Nanocellulose in Biopolymer for High-Grade Packaging
+    Applications
+  authors: Surya, Hazwan, Abdul Khalil, Yahya, Suriani, Danish, Mohamed
+  journal: Polymers 14(19), 4147 (2022)
+  licence: CC BY 3.0
+  data_availability: Not applicable (no raw data published; values from text, Table 1 and figures)
+  base: whole seaweed (Kappaphycus alvarezii)
+  recipe: 10 g raw macroalgae + 5 g glycerol in 500 mL water, cooked at 85 C, cast, dried at 45 C for 24 h
+  additive: kenaf cellulose nanofibre (CNF) at 0-5 %
+  treatment: silane (triethoxymethylsilane, 40 % in acetone, reflux 90 C for 3 h) vs none
+  soil_burial: garden soil, 35 % moisture, 30 x 30 mm films, sampled weekly for 4 weeks (days 7, 14, 21, 28)
+  units:
+    water_vapour_permeability: g mm / (m2 day kPa)
+  assumptions:
+  - CNF % basis is not stated; assumed % of seaweed weight
+  data_quality:
+  - Table 1 contact angles copied directly, with standard deviations
+  - Figure 3 values measured from bar heights by pixel; match every value stated in the text within 0.6 units
+  - Figure 5 values measured by bar colour; match the 8 soil-burial values in the text within 0.4 units
+  - Figure 3 error bars not recorded (caps overlap bar outlines)
+  - text says soil burial ran 30 days; Figure 5 shows weeks 1-4, so the last point is recorded as day 28
+  - moisture absorption for SF1-S is from the text (4.9 % relative reduction vs SF0-S = 84.9 %), confirmed by Figure
+    3b
+garcia:
+  doi: 10.1039/d5ma01298h
+  title: Upcycling Sargassum biomass into biodegradable mulch films via sodium alginate and recycled polyvinyl alcohol
+  authors: Garcia, Gao, Chen, Wang, Snyder
+  journal: Materials Advances (RSC); check year and volume on the article page
+  licence: Creative Commons, open access (check exact variant on the article page)
+  base: sodium alginate (commercial; Sargassum is motivation only, not the source used)
+  other_polymers: recycled polyvinyl alcohol (synthetic) in films A and B and the PVA glycerol series
+  additives: glycerol (plasticiser), zein (protein), beeswax surface coating
+  assumptions:
+  - glycerol series (Fig 4a, 4b) zein content not stated; recorded as none
+  - coating series (Fig 3b) base film not stated; assumed film A
+  - Fig 4c films A-C assumed to be the coated final films (paper unclear)
+  data_quality:
+  - Figure 4 values read by eye from single representative stress-strain curves (about 0.2 MPa, 0.1 % precision),
+    not means of triplicates
+  - Figure 3b contact angles are the values printed on the bars; standard deviations read by eye from error bars
+  - Figure 3a front and back contact angles read by eye
+  - uncoated contact angle - text quotes 73.60 deg (one example image, Fig 3c); Fig 3b mean of 4 is 74.03 deg, used
+  - back-side contact angle - text says 75 +/- 3 deg, Fig 3a shows about 79-81 deg; figure used
+  - coating series 1-coat value (99.2 deg) is lower than film A coated side in Fig 3a (about 108 deg), so the series
+    may use a different film or batch
+  - text says coated films reached at least about 8 MPa, but Figure 4c shows films A and B at 7.4 and 4.6 MPa
+  - text says film C transmits more light due to zein, but Figure 5b shows film B (no zein) transmits the most;
+    figure trusted
+  outdoor_durability_qualitative:
+    note: photos only, not loaded as model data
+    setup: films on rooftop soil surface, natural rain and sun, 25 +/- 10 C
+    top_side_coated: significant degradation within 2 weeks (water entered through the uncoated underside)
+    both_sides_coated: largely intact at 2 weeks, near-complete degradation by 5 weeks
+    soil_safety: OECD 207 earthworm test, 0 % mortality
+  reference_material:
+    note: commercial black PE mulch film, not loaded as data
+    contact_angle: about 94 deg on both sides
+    tensile: about 16.5 MPa at about 263 % strain (Fig 4d)
+abdollahi2013:
+  doi: 10.1016/j.ijbiomac.2012.12.016
+  title: Reducing water sensitivity of alginate bio-nanocomposite film using cellulose nanoparticles
+  authors: Abdollahi, Alboofetileh, Behrooz, Rezaei, Miraki
+  journal: International Journal of Biological Macromolecules 54 (2013) 166-173
+  licence: Elsevier, not open access; numbers used with citation, do not commit the PDF to the repo
+  base: sodium alginate (commercial, medium viscosity)
+  recipe: 1 % w/v alginate in water at 70 C, glycerol 0.25 g per g alginate, cast and dried at 40 C for 24 h, stored
+    at 53 % RH
+  additive: cellulose nanocrystals (from microcrystalline cellulose, sulfuric acid hydrolysis, 89 % crystallinity)
+    at 0, 1, 3, 5, 10 wt% of alginate
+  units:
+    water_vapour_permeability: g / (m s Pa)
+  data_quality:
+  - values at 0 % and 10 % (and tensile/elongation at 5 %) taken from the text; others read by eye from Figures
+    3-6; every figure reading that can be checked matches the text
+  - moisture content copied directly from Table 1
+  - tensile and elongation error bars not recorded (the two series overlap in Figure 6a)
+  - WVP unit - text writes g/m2 s Pa, but the formula (WVTR x thickness / pressure) and the Figure 4 axis give g/(m
+    s Pa); figure unit used
+  - contact angle measured 1 min after placing the drop
+  notes:
+  - cellulose nanocrystals here vs kenaf cellulose nanofibres in surya2022_cnf; different fillers, same lever
+  - strength and modulus peak at 5 % then fall at 10 % (authors attribute this to agglomeration); solubility keeps
+    falling to 10 %
+liling2016:
+  doi: 10.1016/j.carbpol.2015.09.034
+  title: Effects of ionic crosslinking on physical and mechanical properties of alginate mulching films
+  authors: Liling, Di, Jiachao, Xin, Xiaoting, Qing
+  journal: Carbohydrate Polymers 136 (2016) 259-265
+  licence: Elsevier, not open access; numbers used with citation, do not commit the PDF to the repo
+  base: sodium alginate from giant kelp (commercial, 350 mPa s, M/G 1.0)
+  recipe: 10 g alginate + 3 g glycerol + 987 g water, cast at 30 g per 15 cm plate, dried at 60 C for 3 h, then
+    immersed in a crosslinking bath, washed, air-dried, stored at 50 % RH
+  design:
+  - ion type series - Ca, Zn, Mn, Al chloride at 2 % w/v for 2 min, plus uncrosslinked control (Table 1, Fig 1)
+  - CaCl2 concentration series - 1-5 % w/v for 2 min, plus control (Table 2, Fig 2)
+  - crosslinking time series - 2 % CaCl2 for 1, 2, 4, 6 min, plus control (Table 3, Fig 3)
+  units:
+    water_vapour_permeability: g / (m s Pa); tables report x 1e-11
+  data_quality:
+  - thickness, WVP and 450 nm transmission copied from Tables 1-3, with standard deviations
+  - tensile strength and elongation in Fig 2 and Fig 3 measured from marker positions; every value the text states
+    matches (e.g. elongation 3.64 and 5.55 %)
+  - Fig 1 values read by eye, with error bars; Fig 2 and 3 error bars not recorded (they overlap between series)
+  - the three series are separate batches; the same condition (2 % CaCl2, 2 min) gives WVP 4.17, 3.63 and 3.88 (x
+    1e-11) and elongation 4.2, 5.6 and 5.2 % across them, so batch-to-batch variation is larger than within-batch
+    standard deviations
+  - films are very thin (12-14 um), about 5x thinner than typical lab alginate films; WVP is not directly comparable
+    with thicker films
+  gaps:
+  - no contact angle, water solubility, swelling or soil burial, despite the "biodegradation" keyword
+  - paper states that crosslinking makes alginate films water-insoluble, but does not measure it
+  findings:
+  - Ca gives the strongest films (40 -> 135 MPa); strength and elongation peak at 2 % CaCl2
+  - WVP falls with CaCl2 concentration but rises with longer crosslinking time
