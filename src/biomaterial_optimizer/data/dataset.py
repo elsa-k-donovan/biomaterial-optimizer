@@ -6,6 +6,9 @@ Inputs (what a scientist controls):
                      (roles come from data/ingredient_roles.csv)
   crosslink_bath     % w/v of the crosslinking bath the film is dipped in
   surface_treatment  number of coatings or surface treatments
+  drying_temperature °C, drying_time h, crosslinking_time min (role `processing`);
+                     empty when the source doesn't say; crosslinking_time is 0
+                     when there is no crosslinking bath
 
 Targets: one main measurement per property (see TARGETS), each with its sd.
 
@@ -38,6 +41,13 @@ TARGETS = {
     "elongation_at_break": ("elongation at break", "%"),
 }
 
+# Ingredient name (role `processing`) -> (column, unit).
+PROCESSING = {
+    "drying temperature": ("drying_temperature", "°C"),
+    "drying time": ("drying_time", "h"),
+    "crosslinking time": ("crosslinking_time", "min"),
+}
+
 BASE_TYPES = ["alginate", "agar", "carrageenan", "seaweed"]
 
 # Sources left out of the table, with the reason (it goes to skipped.csv).
@@ -68,6 +78,7 @@ COLUMNS = (
         *ADDITIVE_ROLES,
         "crosslink_bath",
         "surface_treatment",
+        *(column for column, _ in PROCESSING.values()),
     ]
     + [c for t in TARGETS for c in (t, f"{t}_sd")]
     + ["ingredients"]
@@ -130,10 +141,17 @@ def recipe_inputs(ingredients: list[dict], roles: dict) -> dict:
     main = max(bases, key=lambda b: b["amount"])["ingredient"]
     amounts = {role: 0.0 for role in ADDITIVE_ROLES}
     amounts |= {"crosslink_bath": 0.0, "surface_treatment": 0.0}
+    processing: dict[str, float | None] = {c: None for c, _ in PROCESSING.values()}
     for i in ingredients:
         name, amount, unit = i["ingredient"], i["amount"], i["unit"]
         role, density = roles.get(name, ("other", None))
         if role in ("base", "solvent"):
+            continue
+        if role == "processing":
+            column, expected = PROCESSING[name]
+            if unit != expected:
+                raise Skip(f"{name} not in {expected}")
+            processing[column] = amount
             continue
         if role == "surface_treatment":
             amounts[role] += amount if unit == "coats" and amount is not None else 1
@@ -148,7 +166,9 @@ def recipe_inputs(ingredients: list[dict], roles: dict) -> dict:
             amounts[role] += amount * per_100ml[unit]
             continue
         amounts[role] += per_gram_base(amount, unit, density, base_amount, base_unit)
-    return {"base": next(t for t in BASE_TYPES if t in main), **amounts}
+    if amounts["crosslink_bath"] == 0 and processing["crosslinking_time"] is None:
+        processing["crosslinking_time"] = 0.0  # no bath, so no time in it
+    return {"base": next(t for t in BASE_TYPES if t in main), **amounts, **processing}
 
 
 def read_roles(path: Path) -> dict[str, tuple[str, float | None]]:
@@ -206,7 +226,7 @@ def build_dataset(
             {
                 i["ingredient"]
                 for i in items
-                if roles.get(i["ingredient"], ("",))[0] != "solvent"
+                if roles.get(i["ingredient"], ("",))[0] not in ("solvent", "processing")
             }
         )
         row = {

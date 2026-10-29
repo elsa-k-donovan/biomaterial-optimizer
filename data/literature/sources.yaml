@@ -18,6 +18,7 @@ surya2022:
     water_vapour_permeability: g mm / (m2 day kPa)
   assumptions:
   - CNF % basis is not stated; assumed % of seaweed weight
+  - processing rows (ingredients.csv) - drying 45 C for 24 h for all films
   data_quality:
   - Table 1 contact angles copied directly, with standard deviations
   - Figure 3 values measured from bar heights by pixel; match every value stated in the text within 0.6 units
@@ -38,6 +39,7 @@ garcia:
   assumptions:
   - glycerol series (Fig 4a, 4b) zein content not stated; recorded as none
   - coating series (Fig 3b) base film not stated; assumed film A
+  - drying conditions not recorded in these notes, so no processing rows; add them from the paper
   - Fig 4c films A-C assumed to be the coated final films (paper unclear)
   data_quality:
   - Figure 4 values read by eye from single representative stress-strain curves (about 0.2 MPa, 0.1 % precision),
@@ -82,6 +84,7 @@ abdollahi2013:
   - WVP unit - text writes g/m2 s Pa, but the formula (WVTR x thickness / pressure) and the Figure 4 axis give g/(m
     s Pa); figure unit used
   - contact angle measured 1 min after placing the drop
+  - processing rows (ingredients.csv) - drying 40 C for 24 h for all films
   notes:
   - cellulose nanocrystals here vs kenaf cellulose nanofibres in surya2022_cnf; different fillers, same lever
   - strength and modulus peak at 5 % then fall at 10 % (authors attribute this to agglomeration); solubility keeps
@@ -111,6 +114,8 @@ liling2016:
     standard deviations
   - films are very thin (12-14 um), about 5x thinner than typical lab alginate films; WVP is not directly comparable
     with thicker films
+  - processing rows (ingredients.csv) - drying 60 C for 3 h for all films; crosslinking time from the series design
+  - controls were never dipped, washed or re-dried, so "change vs control" includes that extra processing
   gaps:
   - no contact angle, water solubility, swelling or soil burial, despite the "biodegradation" keyword
   - paper states that crosslinking makes alginate films water-insoluble, but does not measure it

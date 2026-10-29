@@ -17,6 +17,9 @@ ROLES = {
     "water": ("solvent", 1.0),
     "calcium chloride bath": ("crosslink_bath", None),
     "beeswax coating": ("surface_treatment", None),
+    "drying temperature": ("processing", None),
+    "drying time": ("processing", None),
+    "crosslinking time": ("processing", None),
 }
 
 
@@ -77,6 +80,25 @@ def test_recipe_inputs():
     assert row["filler"] == 0.0
 
 
+def test_processing_columns():
+    row = recipe_inputs(
+        [
+            item("alginate", 10.0, "g"),
+            item("drying temperature", 60.0, "°C"),
+            item("calcium chloride bath", 2.0, "% w/v"),
+        ],
+        ROLES,
+    )
+    assert row["drying_temperature"] == 60.0
+    assert row["drying_time"] is None  # not stated
+    assert row["crosslinking_time"] is None  # bath, but time not stated
+
+
+def test_no_bath_means_zero_crosslinking_time():
+    row = recipe_inputs([item("alginate", 10.0, "g")], ROLES)
+    assert row["crosslinking_time"] == 0.0
+
+
 @pytest.mark.parametrize(
     "items, reason",
     [
@@ -86,6 +108,10 @@ def test_recipe_inputs():
         (
             [item("alginate", 1.0, "g"), item("calcium chloride bath", 2.0, "g")],
             "bath not a concentration",
+        ),
+        (
+            [item("alginate", 1.0, "g"), item("drying time", 30.0, "min")],
+            "drying time not in h",
         ),
     ],
 )

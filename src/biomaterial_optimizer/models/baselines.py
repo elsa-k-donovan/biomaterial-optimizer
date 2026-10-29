@@ -14,25 +14,36 @@ import numpy as np
 import pandas as pd
 from sklearn.dummy import DummyRegressor
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.impute import SimpleImputer
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_absolute_error, r2_score, root_mean_squared_error
 from sklearn.model_selection import KFold, LeaveOneGroupOut, cross_val_predict
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from ..data.dataset import ADDITIVE_ROLES, BASE_TYPES
+from ..data.dataset import ADDITIVE_ROLES, BASE_TYPES, PROCESSING
 
-NUMERIC = [*ADDITIVE_ROLES, "crosslink_bath", "surface_treatment"]
+NUMERIC = [
+    *ADDITIVE_ROLES,
+    "crosslink_bath",
+    "surface_treatment",
+    *(column for column, _ in PROCESSING.values()),
+]
 FEATURES = [*NUMERIC, *(f"base_{b}" for b in BASE_TYPES)]
 
 MODELS = {
     # Always predicts the training mean: the floor every real model must beat.
     "mean": lambda: DummyRegressor(),
     # A straight line per feature; scaled so the penalty treats features equally.
-    "ridge": lambda: make_pipeline(StandardScaler(), Ridge(alpha=1.0)),
+    # Missing drying info is filled with the training median (inside each CV fold,
+    # so the held-out recipes never influence it).
+    "ridge": lambda: make_pipeline(
+        SimpleImputer(strategy="median"), StandardScaler(), Ridge(alpha=1.0)
+    ),
     # Many decision trees averaged; can learn curves and interactions.
-    "random_forest": lambda: RandomForestRegressor(
-        n_estimators=300, min_samples_leaf=2, random_state=0
+    "random_forest": lambda: make_pipeline(
+        SimpleImputer(strategy="median"),
+        RandomForestRegressor(n_estimators=300, min_samples_leaf=2, random_state=0),
     ),
 }
 

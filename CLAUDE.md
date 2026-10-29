@@ -29,7 +29,8 @@ explain ML terms in plain language when they come up.
 
 - `scripts/` thin entry points; logic lives in `src/biomaterial_optimizer/`
 - `src/biomaterial_optimizer/data/schema.py` the three data models + DuckDB table definitions
-- `src/biomaterial_optimizer/data/materiom.py` one Materiom JSON → rows
+- `src/biomaterial_optimizer/data/materiom.py` one Materiom JSON → rows (incl. drying/crosslinking
+  times parsed from the free-text `methods` field)
 - `src/biomaterial_optimizer/data/build.py` read → clean → check → write
 - `src/biomaterial_optimizer/data/dataset.py` database → model table (unit conversion, roles, targets)
 - `src/biomaterial_optimizer/models/baselines.py` mean/ridge/random forest + CV (loso, random)
@@ -55,6 +56,8 @@ Rules:
 - Time points go in the property name, e.g. `soil weight loss day 28`.
 - Treatments are ingredients, e.g. `silane surface treatment`, `beeswax coating` (unit: coats),
   `calcium chloride bath` (unit: % w/v).
+- Processing steps are ingredients too: `drying temperature` (°C), `drying time` (h),
+  `crosslinking time` (min). Materiom: parsed from `methods` text; literature: by hand.
 - Invalid rows go to `data/skipped.csv` with a reason, never dropped silently.
 - Literature recipe ids are prefixed with the paper: `surya2022-SF4-S`.
 - A paper already in Materiom is not loaded again from the literature (no double counting).
@@ -66,7 +69,9 @@ One row per seaweed recipe (a recipe with a `base` ingredient).
 
 - Inputs: `base` (alginate/agar/carrageenan/seaweed), additive amounts in g per g of
   base polymer summed per role (plasticiser, copolymer, filler, crosslinker,
-  water_repellent, active, other), `crosslink_bath` (% w/v), `surface_treatment` (count).
+  water_repellent, active, other), `crosslink_bath` (% w/v), `surface_treatment` (count),
+  `drying_temperature`, `drying_time`, `crosslinking_time` (empty when not stated;
+  crosslinking time is 0 without a bath).
 - Targets, each with `_sd`: water contact angle, water solubility, UV transmittance 280 nm,
   DPPH antioxidant activity, tensile strength, elongation at break.
 - Also `recipe_id`, `source` (for leave-one-source-out CV) and the `ingredients` list.
@@ -80,7 +85,8 @@ One row per seaweed recipe (a recipe with a `base` ingredient).
 - surya2022: seaweed + kenaf cellulose fibre + silane; the only numeric soil-burial data
 - garcia: alginate + recycled PVA (synthetic) + beeswax; outdoor durability is qualitative only
 - abdollahi2013: alginate + cellulose nanocrystals; water resistance, no lifespan
-- liling2016: alginate crosslinked with Ca/Zn/Mn/Al; crosslinking time is only in the recipe name
+- liling2016: alginate crosslinked with Ca/Zn/Mn/Al; the uncrosslinked controls were never
+  dipped, washed or re-dried
 
 Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
 
@@ -99,7 +105,9 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
 2. ~~Baselines~~ (done: `scripts/train_baselines.py`). Finding: with random CV, random
    forest reaches R² 0.5–0.8, but with leave-one-source-out nothing beats the mean
    (except random forest on UV, R² 0.46). The models learn the lab, not the chemistry;
-   e.g. tensile strength medians range 0.8–125 MPa between papers.
+   e.g. tensile strength medians range 0.8–125 MPa between papers. Adding drying and
+   crosslinking times raised random-CV scores but not LOSO: drying conditions are mostly
+   fixed within a paper, so they act as another fingerprint of the lab.
 3. Multi-output Gaussian process from scratch in PyTorch (all targets together, so
    well-measured targets help thin ones), using each measurement's sd as its noise.
    **The owner writes this part herself; review and explain, don't write it.**

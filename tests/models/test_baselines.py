@@ -65,3 +65,9 @@ def test_rows_without_the_target_are_ignored():
 def test_every_model_runs(model):
     evaluate(table(), "tensile_strength", model)
 
+
+@pytest.mark.parametrize("model", MODELS)
+def test_missing_drying_info_is_handled(model):
+    df = table()
+    df.loc[::3, "drying_temperature"] = None
+    evaluate(df, "tensile_strength", model)
