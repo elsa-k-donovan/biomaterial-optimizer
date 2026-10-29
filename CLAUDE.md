@@ -19,6 +19,8 @@ explain ML terms in plain language when they come up.
 - Download Materiom recipes: `uv run --env-file .env scripts/fetch_materiom.py` (`--limit N` for a trial)
 - Build the database: `uv run scripts/build_db.py` (always rebuilds from scratch)
 - Build the model table: `uv run scripts/build_dataset.py` (run after `build_db.py`)
+- Baselines: `uv run scripts/train_baselines.py`; browse runs with
+  `uv run mlflow ui --backend-store-uri sqlite:///mlflow.db`
 - Query: `uv run scripts/query.py "SELECT ..."` or `duckdb data/biomaterials.duckdb`
 - Tests: `uv run pytest`
 - Lint/format: `uv run ruff check . && uv run ruff format .`
@@ -30,6 +32,7 @@ explain ML terms in plain language when they come up.
 - `src/biomaterial_optimizer/data/materiom.py` one Materiom JSON → rows
 - `src/biomaterial_optimizer/data/build.py` read → clean → check → write
 - `src/biomaterial_optimizer/data/dataset.py` database → model table (unit conversion, roles, targets)
+- `src/biomaterial_optimizer/models/baselines.py` mean/ridge/random forest + CV (loso, random)
 - `data/aliases.yaml` all name/unit fixes (lowercase keys)
 - `data/ingredient_roles.csv` ingredient → role (+ density for liquids); unlisted → `other`
 - `data/processed/` model table + its `skipped.csv` (gitignored, rebuilt by the script)
@@ -93,7 +96,10 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
 ## Plan
 
 1. ~~Model table~~ (done: `scripts/build_dataset.py`).
-2. Baselines (ridge, random forest) per target with leave-one-source-out CV, logged to MLflow.
+2. ~~Baselines~~ (done: `scripts/train_baselines.py`). Finding: with random CV, random
+   forest reaches R² 0.5–0.8, but with leave-one-source-out nothing beats the mean
+   (except random forest on UV, R² 0.46). The models learn the lab, not the chemistry;
+   e.g. tensile strength medians range 0.8–125 MPa between papers.
 3. Multi-output Gaussian process from scratch in PyTorch (all targets together, so
    well-measured targets help thin ones), using each measurement's sd as its noise.
    **The owner writes this part herself; review and explain, don't write it.**

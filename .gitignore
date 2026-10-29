@@ -228,3 +228,6 @@ data/literature/*.pdf
 # macOS
 .DS_Store
 data/processed/
+mlflow.db
+mlruns/
+mlartifacts/
