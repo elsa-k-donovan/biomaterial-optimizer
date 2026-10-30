@@ -20,6 +20,8 @@ import csv
 from pathlib import Path
 
 import duckdb
+import numpy as np
+import pandas as pd
 
 ADDITIVE_ROLES = [
     "plasticiser",
@@ -260,3 +262,52 @@ def _write(out_path: Path, rows: list[dict]) -> None:
         )
     con.execute("COPY t TO ? (FORMAT parquet)", [str(out_path)])
     con.close()
+
+
+INPUTS = [
+    *ADDITIVE_ROLES,
+    "crosslink_bath",
+    "surface_treatment",
+    *(column for column, _ in PROCESSING.values()),
+]
+
+
+def change_vs_control(df: pd.DataFrame) -> pd.DataFrame:
+    """The model table rewritten as changes against each paper's own control recipe.
+
+    Each paper's control is its plainest recipe: every input the paper varies is at
+    its lowest. Labs measure differently, but the lab's offset is in both a recipe
+    and its control, so comparing the two cancels it out.
+
+    - inputs: recipe minus control, e.g. +0.05 g filler per g base
+    - targets: log(recipe / control); log 0.22 is +25 %, log 0.69 is double
+    - target sds: on the same log scale, combining the recipe's and control's sds
+
+    Papers where nothing varies, or with no single plainest recipe, are left out;
+    so are the controls themselves. Several equally plain recipes (e.g. one control
+    per series) are averaged into one control.
+    """
+    rows = []
+    for _, paper in df.groupby("source"):
+        varied = [c for c in INPUTS if paper[c].nunique() > 1]
+        if not varied:
+            continue
+        is_control = (paper[varied] == paper[varied].min()).all(axis=1)
+        if not is_control.any():
+            continue
+        numeric = [*INPUTS, *(c for t in TARGETS for c in (t, f"{t}_sd"))]
+        control = paper.loc[is_control, numeric].mean().to_dict()
+        for recipe in paper.loc[~is_control].to_dict("records"):
+            row = {k: recipe[k] for k in ("recipe_id", "source", "base")}
+            for c in INPUTS:
+                row[c] = recipe[c] - control[c]
+            for t in TARGETS:
+                value, before = float(recipe[t]), float(control[t])
+                ok = value > 0 and before > 0  # False for missing (NaN) values too
+                row[t] = np.log(value / before) if ok else np.nan
+                sd, before_sd = float(recipe[f"{t}_sd"]), float(control[f"{t}_sd"])
+                row[f"{t}_sd"] = (
+                    np.hypot(sd / value, before_sd / before) if ok else np.nan
+                )
+            rows.append(row)
+    return pd.DataFrame(rows)

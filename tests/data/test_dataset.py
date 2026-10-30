@@ -1,12 +1,17 @@
 import json
 
 import duckdb
+import numpy as np
+import pandas as pd
 import pytest
 
 from biomaterial_optimizer.data.build import build_database
 from biomaterial_optimizer.data.dataset import (
+    INPUTS,
+    TARGETS,
     Skip,
     build_dataset,
+    change_vs_control,
     per_gram_base,
     recipe_inputs,
 )
@@ -139,3 +144,82 @@ def test_build_dataset(tmp_path, materiom_recipe, literature_dir, aliases_path):
     assert row == ("alginate", pytest.approx(0.25), pytest.approx(0.05))
     assert (out.parent / "skipped.csv").exists()
     assert all(s["reason"] for s in skipped)
+
+
+def model_table(rows):
+    """A tiny model table: unspecified inputs are 0, unspecified targets missing."""
+    df = pd.DataFrame(rows)
+    for c in INPUTS:
+        df[c] = df.get(c, 0.0)
+    for t in TARGETS:
+        for c in (t, f"{t}_sd"):
+            df[c] = df.get(c, np.nan)
+    return df.assign(base="alginate")
+
+
+def test_change_vs_control():
+    df = model_table(
+        [
+            {"recipe_id": "a0", "source": "A", "filler": 0.0, "tensile_strength": 20.0},
+            {
+                "recipe_id": "a5",
+                "source": "A",
+                "filler": 0.05,
+                "tensile_strength": 25.0,
+            },
+            {"recipe_id": "b0", "source": "B", "filler": 0.0, "tensile_strength": 40.0},
+            {
+                "recipe_id": "b5",
+                "source": "B",
+                "filler": 0.05,
+                "tensile_strength": 50.0,
+            },
+        ]
+    )
+    changes = change_vs_control(df).set_index("recipe_id")
+    assert list(changes.index) == ["a5", "b5"]  # controls themselves are dropped
+    # Different labs, same +25 %: the lab offset cancels out.
+    assert changes.loc["a5", "tensile_strength"] == pytest.approx(np.log(1.25))
+    assert changes.loc["b5", "tensile_strength"] == pytest.approx(np.log(1.25))
+    assert changes.loc["a5", "filler"] == pytest.approx(0.05)
+
+
+def test_change_vs_control_averages_tied_controls():
+    df = model_table(
+        [
+            {
+                "recipe_id": "c1",
+                "source": "A",
+                "crosslink_bath": 0,
+                "tensile_strength": 30.0,
+            },
+            {
+                "recipe_id": "c2",
+                "source": "A",
+                "crosslink_bath": 0,
+                "tensile_strength": 50.0,
+            },
+            {
+                "recipe_id": "x",
+                "source": "A",
+                "crosslink_bath": 2,
+                "tensile_strength": 80.0,
+            },
+        ]
+    )
+    changes = change_vs_control(df)
+    assert changes["tensile_strength"].tolist() == pytest.approx([np.log(2.0)])
+
+
+def test_change_vs_control_drops_papers_without_a_control():
+    df = model_table(
+        [
+            # Nothing varies: no comparison possible.
+            {"recipe_id": "n1", "source": "N", "tensile_strength": 10.0},
+            {"recipe_id": "n2", "source": "N", "tensile_strength": 12.0},
+            # Two things vary, but no recipe has both at their lowest.
+            {"recipe_id": "m1", "source": "M", "filler": 0.1, "tensile_strength": 10.0},
+            {"recipe_id": "m2", "source": "M", "active": 0.1, "tensile_strength": 12.0},
+        ]
+    )
+    assert change_vs_control(df).empty

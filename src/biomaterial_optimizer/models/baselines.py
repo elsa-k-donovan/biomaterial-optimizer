@@ -21,14 +21,11 @@ from sklearn.model_selection import KFold, LeaveOneGroupOut, cross_val_predict
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from ..data.dataset import ADDITIVE_ROLES, BASE_TYPES, PROCESSING
+from ..data.dataset import BASE_TYPES, INPUTS
 
-NUMERIC = [
-    *ADDITIVE_ROLES,
-    "crosslink_bath",
-    "surface_treatment",
-    *(column for column, _ in PROCESSING.values()),
-]
+NUMERIC = INPUTS
+# Leave-one-source-out needs a few papers to mean anything.
+MIN_SOURCES = 3
 FEATURES = [*NUMERIC, *(f"base_{b}" for b in BASE_TYPES)]
 
 MODELS = {

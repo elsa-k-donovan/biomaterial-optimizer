@@ -108,6 +108,12 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
    e.g. tensile strength medians range 0.8–125 MPa between papers. Adding drying and
    crosslinking times raised random-CV scores but not LOSO: drying conditions are mostly
    fixed within a paper, so they act as another fingerprint of the lab.
+   Change vs control (`change_vs_control()` in `dataset.py`: inputs and log-ratio targets
+   against each paper's plainest recipe) keeps 17 of 25 papers; tensile LOSO R² rose to
+   ~0 (random forest), others did not improve. Most remaining error comes from papers
+   that test a lever no other paper tests (e.g. only liling2016 varies a calcium bath):
+   the model can't learn an effect it has never seen. Baselines log both tables
+   (`table` = absolute/change); targets with < 3 papers are skipped.
 3. Multi-output Gaussian process from scratch in PyTorch (all targets together, so
    well-measured targets help thin ones), using each measurement's sd as its noise.
    **The owner writes this part herself; review and explain, don't write it.**
