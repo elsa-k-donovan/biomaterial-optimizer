@@ -1,6 +1,6 @@
 # biomaterial-optimizer
 
-Portfolio project for an ML role at Materiom. Question it answers:
+Portfolio project for an ML role. Question it answers:
 
 > Which additives and processing choices make seaweed-based films more resistant
 > to the main causes of degradation (water, UV, oxidation, microbes), and what do
