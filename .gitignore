@@ -231,3 +231,4 @@ data/processed/
 mlflow.db
 mlruns/
 mlartifacts/
+evals/runs/

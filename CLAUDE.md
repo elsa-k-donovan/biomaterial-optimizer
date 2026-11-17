@@ -23,6 +23,8 @@ explain ML terms in plain language when they come up.
   `uv run mlflow ui --backend-store-uri sqlite:///mlflow.db`
 - BO benchmark: `uv run scripts/bo_benchmark.py` (BO vs random, logged to MLflow)
 - Recipe proposals: `uv run scripts/propose_recipes.py [--base agar] [--max-tensile-loss 0.1]`
+- Agent: `uv run --env-file .env scripts/agent.py "question"` (needs `ANTHROPIC_API_KEY` in `.env`)
+- Agent eval: `uv run --env-file .env scripts/eval_agent.py [--cases id1,id2]` (paid; ask first)
 - Query: `uv run scripts/query.py "SELECT ..."` or `duckdb data/biomaterials.duckdb`
 - Tests: `uv run pytest`
 - Lint/format: `uv run ruff check . && uv run ruff format .`
@@ -39,6 +41,10 @@ explain ML terms in plain language when they come up.
 - `src/biomaterial_optimizer/models/bo.py` pool-based BO loop; the GP is a swappable
   `surrogate(X_seen, y_seen, X_pool) -> (mean, std)` (BoTorch's for now)
 - `src/biomaterial_optimizer/models/propose.py` new recipe proposals (constrained EI)
+- `src/biomaterial_optimizer/agent.py` PydanticAI agent (Claude Opus 5.5) with typed tools:
+  `query_database` (read-only, no file/network access), `data_coverage`, `propose_recipes`
+- `src/biomaterial_optimizer/agent_eval.py` + `evals/agent_cases.yaml` code-graded agent eval;
+  runs go to `evals/runs/` (gitignored) and MLflow experiment `agent_eval`
 - `.github/workflows/ci.yml` ruff, pyright and pytest on every push
 - `data/aliases.yaml` all name/unit fixes (lowercase keys)
 - `data/ingredient_roles.csv` ingredient → role (+ density for liquids); unlisted → `other`
@@ -98,7 +104,7 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
 
 ## Known data issues
 
-- Water vapour permeability appears in two units (`g mm/m2 d kPa`, `g/(m s Pa)`); convert in the modeling step.
+- Water vapour permeability appears in three units (`g mm/m2 d kPa`, `g/(m s Pa)`, `g·m/m²·Pa·s`); convert in the modeling step.
 - Values differ more between batches/labs than within them: validate leave-one-source-out.
 - Microbes/biodegradation has too little data (16 seaweed recipes, 2 papers) to model;
   treat it as a documented data gap unless more papers are added.
@@ -134,8 +140,15 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
    proposal lists levers never tried for a target (e.g. no paper measured contact angle
    on bath-crosslinked films): those predictions are guesses. Roles are generic
    ("copolymer"), so proposals don't say *which* copolymer; step 4 would fix that.
-6. MLOps: GitHub Actions CI done. Model registry, data checks and the PydanticAI
-   agent are out of scope for the short wrap-up.
+6. MLOps: GitHub Actions CI done. PydanticAI agent built (tested offline with fake
+   models; no paid run yet). Eval: 12 code-graded cases (tool calls, arguments, numbers
+   from SQL, caveat words); the owner approved the cases, a 2-case pilot comes before a
+   full run. Model registry and data checks are out of scope.
+
+## Working with the owner
+
+She is learning AI engineering through this project and has ADHD: explain like to a
+beginner, short chunks, one idea at a time, one clear next step.
 
 Closed loop (later, once the owner has lab access): her own results go in `data/lab/`
 as another source (`lab:<name>`, ids `lab-001`) in the same three tables; retrain and
