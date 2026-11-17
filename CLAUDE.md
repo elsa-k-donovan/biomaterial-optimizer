@@ -21,6 +21,8 @@ explain ML terms in plain language when they come up.
 - Build the model table: `uv run scripts/build_dataset.py` (run after `build_db.py`)
 - Baselines: `uv run scripts/train_baselines.py`; browse runs with
   `uv run mlflow ui --backend-store-uri sqlite:///mlflow.db`
+- BO benchmark: `uv run scripts/bo_benchmark.py` (BO vs random, logged to MLflow)
+- Recipe proposals: `uv run scripts/propose_recipes.py [--base agar] [--max-tensile-loss 0.1]`
 - Query: `uv run scripts/query.py "SELECT ..."` or `duckdb data/biomaterials.duckdb`
 - Tests: `uv run pytest`
 - Lint/format: `uv run ruff check . && uv run ruff format .`
@@ -34,6 +36,10 @@ explain ML terms in plain language when they come up.
 - `src/biomaterial_optimizer/data/build.py` read → clean → check → write
 - `src/biomaterial_optimizer/data/dataset.py` database → model table (unit conversion, roles, targets)
 - `src/biomaterial_optimizer/models/baselines.py` mean/ridge/random forest + CV (loso, random)
+- `src/biomaterial_optimizer/models/bo.py` pool-based BO loop; the GP is a swappable
+  `surrogate(X_seen, y_seen, X_pool) -> (mean, std)` (BoTorch's for now)
+- `src/biomaterial_optimizer/models/propose.py` new recipe proposals (constrained EI)
+- `.github/workflows/ci.yml` ruff, pyright and pytest on every push
 - `data/aliases.yaml` all name/unit fixes (lowercase keys)
 - `data/ingredient_roles.csv` ingredient → role (+ density for liquids); unlisted → `other`
 - `data/processed/` model table + its `skipped.csv` (gitignored, rebuilt by the script)
@@ -116,13 +122,20 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
    (`table` = absolute/change); targets with < 3 papers are skipped.
 3. Multi-output Gaussian process from scratch in PyTorch (all targets together, so
    well-measured targets help thin ones), using each measurement's sd as its noise.
-   **The owner writes this part herself; review and explain, don't write it.**
 4. Chemical language model embeddings (e.g. ChemBERTa) of additives as GP features,
    so the model can reason about unseen additives.
-5. Bayesian optimisation (BoTorch): pool-based benchmark vs random, then constrained
-   recipe proposals (amounts within seen ranges, strength above a minimum).
-6. MLOps: GitHub Actions running tests, MLflow model registry, data checks,
-   PydanticAI agent with typed tools and evals.
+5. Bayesian optimisation (BoTorch): pool-based benchmark vs random (done with BoTorch's
+   GP, `scripts/bo_benchmark.py`, change-vs-control table, 5 random starts + 25 picks,
+   20 repeats). Picks needed to reach a top-5 % recipe, BO vs random: contact angle
+   4.1 vs 7.5, tensile 3.7 vs 11.3, elongation 3.5 vs 6.2. Next: swap in the owner's GP.
+   Recipe proposals (done, `scripts/propose_recipes.py`): changes to a plain film, 1–3
+   levers within seen ranges, scored by Expected Improvement on contact angle × chance
+   that tensile/elongation drop no more than the limits (default 10 % / 25 %). Each
+   proposal lists levers never tried for a target (e.g. no paper measured contact angle
+   on bath-crosslinked films): those predictions are guesses. Roles are generic
+   ("copolymer"), so proposals don't say *which* copolymer; step 4 would fix that.
+6. MLOps: GitHub Actions CI done. Model registry, data checks and the PydanticAI
+   agent are out of scope for the short wrap-up.
 
 Closed loop (later, once the owner has lab access): her own results go in `data/lab/`
 as another source (`lab:<name>`, ids `lab-001`) in the same three tables; retrain and
