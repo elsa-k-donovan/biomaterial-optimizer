@@ -7,7 +7,7 @@ Portfolio project for an ML role. Question it answers:
 > they cost in strength and flexibility?
 
 Pipeline: Materiom recipes + hand-extracted literature → DuckDB → model table →
-Gaussian process (written from scratch in PyTorch) → Bayesian optimisation
+Gaussian process (BoTorch's `SingleTaskGP`) → Bayesian optimisation
 (BoTorch) → PydanticAI agent. Tracking with MLflow.
 
 The owner has a software/data engineering background and is new to ML/MLOps:
@@ -126,8 +126,13 @@ Do not commit PDFs (two are not open access), `.env`, `data/raw/` or `*.duckdb`.
    that test a lever no other paper tests (e.g. only liling2016 varies a calcium bath):
    the model can't learn an effect it has never seen. Baselines log both tables
    (`table` = absolute/change); targets with < 3 papers are skipped.
-3. Multi-output Gaussian process from scratch in PyTorch (all targets together, so
-   well-measured targets help thin ones), using each measurement's sd as its noise.
+3. Gaussian process: use BoTorch's `SingleTaskGP` (owner's decision, 2026-11-17: use
+   what AI engineers use in practice). A from-scratch PyTorch GP was written and
+   compared first, then removed: it matched BoTorch in the BO benchmark on tensile
+   strength (3.5 vs 3.6 picks) and elongation (4.0 vs 3.5) but was no better than
+   random on contact angle (7.7 vs 4.1), because without priors it explained 5 points
+   as pure noise. Possible upgrade: pass each measurement's sd to BoTorch as known
+   noise (`train_Yvar`).
 4. Chemical language model embeddings (e.g. ChemBERTa) of additives as GP features,
    so the model can reason about unseen additives.
 5. Bayesian optimisation (BoTorch): pool-based benchmark vs random (done with BoTorch's
